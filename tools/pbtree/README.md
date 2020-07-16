@@ -9,7 +9,7 @@ Will support proto2 <---> json string convertion later.
     protobuf object -> ptree -> json
     protobuf object <- ptree <- json
    
-    Proto3 and boost ptree are required and it is just a convinient wrapper, forget about performance.
+    Proto3 and boost ptree are required and it is just a convenient wrapper, forget about performance.
 
 
 ### Usage

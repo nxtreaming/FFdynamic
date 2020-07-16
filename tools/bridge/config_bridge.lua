@@ -26,7 +26,7 @@ config.task_instance_start_port = 34444
 config.task_report_interval = 10
 config.task_report_status_uri = "/internal_task/task_info"
 
--- interactive live streaming dynamic change uri. just enum here, for convinent
+-- interactive live streaming dynamic change uri. just enum here, for convenient
 confit.ils_url = {"create_room", "create_room_with_participants", "delete_room", "left_room", "room_stream_info",
                   "change_room_layout", "set_stream_state", "add_filter", "filter_chain", "delete_filter",
                   "mute_participants", "unmute_participants"}

@@ -63,7 +63,7 @@ At this point, no real component is really created, just their options.
                                              DavDefaultInputStreamletTag("test_input"), inputOption);
 ```
 
-Here, we use a predefined input streamlet builder to build all components. A streamlet is a set of components, with convinient components' manage functionalities (start, stop, pause, etc.. and input/output data interface).
+Here, we use a predefined input streamlet builder to build all components. A streamlet is a set of components, with convenient components' manage functionalities (start, stop, pause, etc.. and input/output data interface).
 
 After build input/output streamlet, connect them by:
 

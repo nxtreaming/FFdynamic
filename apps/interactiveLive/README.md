@@ -21,7 +21,7 @@ Interactive live is an full features application based on FFdynamic:
 ## `Play with the Ial`
 
 There is a python script you can play with, named *'testIal.py'*, it is just some http request sending to Ial's http server.
-(There is a plan to provide a web ui for convinient of control the 'Ial', however I am not good at web front end work, so contributions are welcome)
+(There is a plan to provide a web ui for convenient of control the 'Ial', however I am not good at web front end work, so contributions are welcome)
 
 Currently, the requests include:
 ```
