@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 # -*- coding: utf-8 -*-
 
 import time
@@ -37,9 +39,9 @@ out_setting_id_1080p = "1080p_4000kb"
 out_setting_id_udp_720p = "udp_720p"
 
 # chnage to your files
-input1 = "bunny.avi"
-input2 = "soccer_adidas_ad.mp4"
-input3 = "nba_ad.mp4"
+input1 = "/data/dev/FFdynamic/apps/interactiveLive/testScripts/a.mp4"
+input2 = "/data/dev/FFdynamic/apps/interactiveLive/testScripts/b.mp4"
+input3 = "/data/dev/FFdynamic/apps/interactiveLive/testScripts/c.mp4"
 
 output_dir = "./" #"../testScripts"
 fullurl_output_720 = "output_720p.flv"
@@ -84,11 +86,11 @@ def sendCreateRoom():
 def addNewInput():
     new_input = ial_request.AddNewInputStream()
     choise = input("Enter choise 1, 2 or 3 to add input1, input2, input3: ")
-    if choise == "1":
+    if choise == 1:
         new_input.input_url = input1
-    elif choise == "2":
+    elif choise == 2:
         new_input.input_url = input2
-    elif choise == "3":
+    elif choise == 3:
         new_input.input_url = input3
     else:
         print ("not valid choise " + choise + ", do nothing")
@@ -99,9 +101,9 @@ def addNewInput():
 def addNewOutput():
     new_output = ial_request.AddNewOutput()
     choise = input("Enter choise 1, for 1080p output setting; 2, for udp 720p setting: ")
-    if choise == "1":
+    if choise == 1:
         new_output.output_setting_id = out_setting_id_1080p
-    elif choise == "2":
+    elif choise == 2:
         new_output.output_setting_id = out_setting_id_udp_720p
         new_output.output_urls.append(fullurl_output_udp_720)
     else:
@@ -114,11 +116,11 @@ def addNewOutput():
 def closeOneInput():
     one_input = ial_request.CloseOneInputStream()
     choise = input("Enter choise 1, 2 or 3. to close input1, input2 or input3: ")
-    if choise == "1":
+    if choise == 1:
         one_input.input_url = input1
-    elif choise == "2":
+    elif choise == 2:
         one_input.input_url = input2
-    elif choise == "3":
+    elif choise == 3:
         one_input.input_url = input3
     else:
         print ("not valid choise " + choise + ", do nothing")
@@ -135,10 +137,10 @@ def closeOneOutput():
 def muteUnmute():
     choise = input("Enter choise 1, 2 to mute or unmute input1 & input2: ")
     audio_mute_unmute = ial_request.AudioMixMuteUnMute()
-    if choise == "1":
+    if choise == 1:
         audio_mute_unmute.mute_input_urls.append(input1)
         audio_mute_unmute.mute_input_urls.append(input2)
-    elif choise == "2":
+    elif choise == 2:
         audio_mute_unmute.unmute_input_urls.append(input1)
         audio_mute_unmute.unmute_input_urls.append(input2)
     else:
@@ -150,11 +152,11 @@ def muteUnmute():
 def layoutChange():
     layout_change = ial_request.VideoMixChangeLayout()
     choise = input("Enter choise 1, 2 or 3. to choose: eSingle_1, eEqual_4, eEqual_9: ")
-    if choise == "1":
+    if choise == 1:
         layout_change.new_layout.layout = wave.eSingle_1
-    elif choise == "2":
+    elif choise == 2:
         layout_change.new_layout.layout = wave.eEqual_4
-    elif choise == "3":
+    elif choise == 3:
         layout_change.new_layout.layout = wave.eEqual_9
     else:
         print ("not valid choise " + choise + ", do nothing")
@@ -167,7 +169,7 @@ def layoutChange():
 def setMixNewBackgroud():
     updateBg = ial_request.VideoMixUpdateBackgroud()
     choise = input("Enter new backgroud image url:  ")
-    if choise == "1":
+    if choise == 1:
         updateBg.backgroud_image_url = "../../../asset/ffdynamic-bg2.jpg"
     # specifc coordinates not supported right now
     updateBg.backgroud_image_url = choise
@@ -186,24 +188,26 @@ if __name__ == "__main__":
             choise = input("Enter choise (or leave blank to finish): ")
             if choise == "":
                 break
-            elif choise == "1":
+            elif choise == 1 :
                 sendCreateRoom()
-            elif choise == "2":
+            elif choise == 2:
                 addNewInput()
-            elif choise == "3":
+            elif choise ==  3:
                 addNewOutput()
-            elif choise == "4":
+            elif choise == 4:
                 closeOneInput()
-            elif choise == "5":
+            elif choise == 5:
                 closeOneOutput()
-            elif choise == "6":
+            elif choise == 6:
                 muteUnmute()
-            elif choise == "7":
+            elif choise == 7:
                 layoutChange()
-            elif choise == "8":
+            elif choise == 8:
                 setMixNewBackgroud()
-            elif choise == "10":
+            elif choise == 10:
                 ialStop()
+            else :
+                print ("Not support this command")
         except Exception as e:
             print (" choice of "+ str(choise) + " cause exception ", e)
     ##
