@@ -34,7 +34,8 @@ int FFmpegVideoEncode::dynamicallyInitialize(const DavTravelStatic & in) {
 
     m_encCtx = avcodec_alloc_context3(enc);
     CHECK(m_encCtx != nullptr) << (m_logtag + " fail alloate encode context");
-    // m_encCtx->flags |= AV_CODEC_FLAG_GLOBAL_HEADER; /* TODO: always output this one ?*/
+    // rtmp(flv) -->mpegts MUST set AV_CODEC_FLAG_GLOBAL_HEADER
+    m_encCtx->flags |= AV_CODEC_FLAG_GLOBAL_HEADER; /* TODO: always output this one ?*/
 
     /* before open, some other parameters need be set */
     /* calculate encode aspect ratio */

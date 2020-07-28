@@ -140,7 +140,7 @@ int FFmpegMux::onProcess(DavProcCtx & ctx) {
         ctx.m_bInputFlush = true;
         LOG(INFO) << m_logtag << "receve one flush packet from " << *ctx.m_inBuf;
     }
-    else
+    else 
         pkt->stream_index = m_muxStreamsMap.at(ctx.m_inBuf->getAddress())->index;
 
     int ret = av_interleaved_write_frame(m_fmtCtx, pkt);

@@ -46,7 +46,7 @@
       },
       "audio_encode" : {
         "encode_type" : "ffmpeg",
-        "codec_name" : "aac-he",
+        "codec_name" : "aac",
         "avdict_encode_option" : {"ac" : "2", "ab" : "128k", "ar" : "44100"}
       },
 
@@ -54,7 +54,7 @@
       "pre_encode_audio_filter" : {"filter_type" : "ffmpeg",
                                    "filter_arg" : "acrossfade=d=10:o=0:c1=exp:c2=exp"},
       "mux_outputs" : [
-        {"mux_type" : "ffmpeg", "mux_fmt" : "mpegts", "avdict_mux_option" : {}}
+        {"mux_type" : "ffmpeg", "mux_fmt" : "flv", "avdict_mux_option" : {}}
       ]
     },
 

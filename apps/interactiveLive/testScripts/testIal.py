@@ -39,12 +39,14 @@ out_setting_id_1080p = "1080p_4000kb"
 out_setting_id_udp_720p = "udp_720p"
 
 # chnage to your files
-input1 = "/data/dev/FFdynamic/apps/interactiveLive/testScripts/a.mp4"
-input2 = "/data/dev/FFdynamic/apps/interactiveLive/testScripts/b.mp4"
-input3 = "/data/dev/FFdynamic/apps/interactiveLive/testScripts/c.mp4"
+input1 = "/data/dev/b.mp4"
+input2 = "/data/dev/b.mp4"
+input3 = "/data/dev/c.mp4"
 
 output_dir = "./" #"../testScripts"
-fullurl_output_720 = "output_720p.flv"
+# fullurl_output_720 = "output_720p.flv"
+# fullurl_output_720 = "/data/dev/debug.flv"
+fullurl_output_720 = "rtmp://example.com/app/test"
 fullurl_output_1080 = "output_1080p.flv"
 fullurl_output_udp_720 = "udp://127.0.0.1:12345"
 
